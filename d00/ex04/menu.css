@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menu {
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  background: #00d15e;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  background: #00d196;
+  border: 1px solid white;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+}
+
+ul {
+  display: none;
+}
+
+.menu:hover > ul {
+  display: block;
+}
+
+li:hover {
+  background: #03fca5;
+}

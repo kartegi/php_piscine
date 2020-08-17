@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Balloon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .conteiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .balloon {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div
+        class="balloon"
+        style="width: 200px; height: 200px; background: rgb(255, 0, 0);"
+      ></div>
+    </div>
+    <script>
+      $(document).ready(() => {
+        //----->Get div .balloon<-----//
+
+        let balloon = $(".balloon");
+
+        //----->Color change function<-----//
+
+        function setColor(hover) {
+          //Get balloon's background color//
+
+          let bgColor = balloon.css("backgroundColor");
+          console.log(bgColor);
+
+          //On mouse out//
+
+          if (hover === 1) {
+            if (bgColor == "rgb(255, 0, 0)")
+              balloon.css("backgroundColor", "rgb(0, 0, 255)");
+            else if (bgColor == "rgb(0, 128, 0)")
+              balloon.css("backgroundColor", "rgb(255, 0, 0)");
+            else balloon.css("backgroundColor", "rgb(0, 128, 0)");
+
+            //On click//
+          } else if (hover === 0) {
+            if (bgColor == "rgb(255, 0, 0)")
+              balloon.css("backgroundColor", "rgb(0, 128, 0)");
+            else if (bgColor == "rgb(0, 128, 0)")
+              balloon.css("backgroundColor", "rgb(0, 0, 255)");
+            else balloon.css("backgroundColor", "rgb(255, 0, 0)");
+          }
+        }
+
+        //----->Size change function<-----//
+
+        function sizeChange(hover) {
+          //Get balloon's size//
+          let size = {
+            height: balloon.height(),
+            width: balloon.width(),
+          };
+          //On mouse out//
+          if (hover === 1 && size.height - 5 >= 200) {
+            balloon.height(size.height - 5);
+            balloon.width(size.width - 5);
+            //On click//
+          } else if (hover === 0) {
+            if (balloon.height() == 420) {
+              balloon.height(200);
+              balloon.width(200);
+            } else {
+              balloon.height(size.height + 10);
+              balloon.width(size.width + 10);
+            }
+          }
+        }
+
+        //----->Event handling<-----//
+
+        //>>Click handling
+        balloon.click(() => {
+          //Set new values to the DOM
+          sizeChange(0);
+          setColor(0);
+        });
+        //>>Mouse out handling
+        balloon.mouseout(() => {
+          //Set new values to the DOM
+          setColor(1);
+          sizeChange(1);
+        });
+      });
+    </script>
+  </body>
+</html>

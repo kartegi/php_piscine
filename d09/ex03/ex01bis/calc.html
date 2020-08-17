@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <input type="text" id="left-member" />
+        <select id="select">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+          <option value="%">%</option>
+        </select>
+        <input type="text" id="right-member" />
+        <input id="btn" type="submit" value="Try me!" />
+      </div>
+    </div>
+    <script>
+      $(document).ready(() => {
+        //----->Get elements from DOM<-----//
+
+        const select = $("#select");
+        const btn = $("#btn");
+        const lmember = $("#left-member");
+        const rmember = $("#right-member");
+
+        //----->Pop up window every 30 sec<-----//
+
+        setInterval(() => alert("Please, use me..."), 30000);
+
+        //----->Calculating function<-----//
+
+        function calculater(operator, loperand, roperand) {
+          switch (operator) {
+            case "+":
+              console.log(loperand + roperand);
+              alert(loperand + roperand);
+              break;
+            case "-":
+              console.log(loperand - roperand);
+              alert(loperand - roperand);
+              break;
+            case "*":
+              console.log(loperand * roperand);
+              alert(loperand * roperand);
+              break;
+            case "/":
+              console.log(loperand / roperand);
+              alert(loperand / roperand);
+              break;
+            case "%":
+              console.log(loperand % roperand);
+              alert(loperand % roperand);
+              break;
+          }
+        }
+
+        //----->Event click handlling<-----//
+
+        btn.click(() => {
+          let operator = select.val();
+          if (
+            (operator == "/" && Number(rmember.val()) == 0) ||
+            (operator == "%" && Number(rmember.val()) == 0)
+          ) {
+            console.log("It’s over 9000!");
+            alert("It’s over 9000!");
+          } else if (Number(lmember.val()) >= 0 && Number(rmember.val()) >= 0)
+            calculater(operator, Number(lmember.val()), Number(rmember.val()));
+          else alert("Error :(");
+        });
+      });
+    </script>
+  </body>
+</html>

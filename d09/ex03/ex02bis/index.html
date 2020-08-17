@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Todo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+      }
+
+      #ft_list {
+        width: 40%;
+        height: 80%;
+        border: 1px solid #00ff80;
+        overflow: auto;
+      }
+
+      #ft_list div {
+        padding: 3%;
+        height: 10%;
+        width: 100%;
+        border-bottom: 1px solid #00ff80;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      button {
+        width: 40%;
+        height: 10%;
+        background: #00ff80;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="ft_list"></div>
+      <button class="btn" id="btn">New</button>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>

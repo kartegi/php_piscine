@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: relative;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background: #505050;
+}
+
+.header {
+  position: relative;
+  margin: 0 auto;
+  width: 1065px;
+  height: 101px;
+  background: #909090;
+  border-radius: 10px;
+  margin-top: 7px;
+  padding: 5px;
+}
+
+.logo {
+  width: 330px;
+  float: left;
+}
+
+.glass {
+  width: 200px;
+  position: absolute;
+  right: 24px;
+}
+
+.options {
+  position: relative;
+  width: 15px;
+  height: 100%;
+  float: right;
+}
+
+.close {
+  position: absolute;
+  bottom: 3px;
+  right: 0;
+}
+
+.aside {
+  width: 105px;
+  height: 320px;
+  background: #909090;
+  border-radius: 10px;
+  margin-top: 13px;
+}
+
+.aside-1 {
+  float: right;
+  margin-right: 165px;
+}
+
+.wall {
+  width: 90px;
+  height: 50px;
+  margin: 0 auto;
+  background: url("resources/brick.jpg");
+  background-size: 20px;
+  background-repeat: repeat;
+}
+
+.aside-2 {
+  margin-left: 165px;
+  padding-top: 10px;
+}
+
+.aside img {
+  display: block;
+  width: 50px;
+  margin: 10px auto;
+}
+
+.eye {
+  border: 3px solid red;
+  width: 100px;
+}
+
+.main {
+  position: relative;
+  width: 766px;
+  height: 437px;
+  background: url("resources/cluster.jpg");
+  background-size: cover;
+  float: right;
+  margin-right: 29px;
+  margin-top: 14px;
+  border: 10px solid #909090;
+  border-radius: 7px;
+}
+
+.ikea {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  bottom: 75px;
+  left: 240px;
+}
+
+.apple {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  bottom: 75px;
+  right: 10px;
+}
+
+.ask {
+  position: absolute;
+  width: 390px;
+  height: 125px;
+  background: #88ff89;
+  z-index: 999;
+  left: 110px;
+  bottom: 15px;
+  border-radius: 7px;
+  font-family: sans-serif;
+  letter-spacing: 0.3px;
+  font-size: 13px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.ask .big {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.forimput {
+  display: block;
+  font-style: italic;
+}
+
+.form {
+  position: relative;
+}
+.form input {
+  width: 290px;
+  height: 17px;
+}
+
+.form button {
+  position: absolute;
+  height: 17px;
+  width: 60px;
+  font-size: 10px;
+  right: 30px;
+}

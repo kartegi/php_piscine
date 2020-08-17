@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Balloon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .conteiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .balloon {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div
+        class="balloon"
+        style="width: 200px; height: 200px; background: red;"
+      ></div>
+    </div>
+    <script>
+      //----->Get div .balloon<-----//
+
+      let balloon = document.querySelector(".balloon");
+
+      //----->Color change function<-----//
+
+      function setColor(hover) {
+        //Get balloon's background color//
+        let bgColor = balloon.style.backgroundColor;
+        //On mouse out//
+        if (hover === 1) {
+          if (bgColor == "red") balloon.style.backgroundColor = "blue";
+          else if (bgColor == "green") balloon.style.backgroundColor = "red";
+          else balloon.style.backgroundColor = "green";
+          //On click//
+        } else if (hover === 0) {
+          if (bgColor == "red") balloon.style.backgroundColor = "green";
+          else if (bgColor == "green") balloon.style.backgroundColor = "blue";
+          else balloon.style.backgroundColor = "red";
+        }
+      }
+
+      //----->Size change function<-----//
+
+      function sizeChange(hover) {
+        //Get balloon's size//
+        let size = {
+          height: parseInt(balloon.style.height, 10),
+          width: parseInt(balloon.style.width, 10),
+        };
+        //On mouse out//
+        if (hover === 1 && size.height - 5 >= 200) {
+          balloon.style.height = size.height - 5 + "px";
+          balloon.style.width = size.width - 5 + "px";
+          //On click//
+        } else if (hover === 0) {
+          if (balloon.style.height == "420px") {
+            balloon.style.height = "200px";
+            balloon.style.width = "200px";
+          } else {
+            balloon.style.height = size.height + 10 + "px";
+            balloon.style.width = size.width + 10 + "px";
+          }
+        }
+      }
+
+      //----->Event handling<-----//
+
+      //>>Click handling
+      balloon.addEventListener("click", () => {
+        //Set new values to the DOM
+        sizeChange(0);
+        setColor(0);
+      });
+      //>>Mouse out handling
+      balloon.addEventListener("mouseout", () => {
+        //Set new values to the DOM
+        setColor(1);
+        sizeChange(1);
+      });
+    </script>
+  </body>
+</html>
